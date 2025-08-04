@@ -30,9 +30,10 @@ G1 X180 F18000
 
 {if manual_filament_change}
     ; cut old filament
-    G1 X193 F100
-    G1 X180 F250
-    G1 X-13.5 F18000
+    G1 X190 F250 ; move to the cutter
+    G1 X195 F100 ; cut slowly
+    G1 X190 F250 ; move away from the cutter
+    G1 X-13.5 F18000 ; move quickly over the poop chute
     G1 E-{retraction_distances_when_cut[previous_extruder]} F1200
 
     ; set new temperature
